@@ -1,0 +1,50 @@
+<!-- Agrega esta etiqueta link en el head de tu HTML -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    .navbar {
+        background-color: #007BFF; /* Azul más oscuro */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand {
+        font-family: 'OtraFuente', sans-serif;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img {
+        margin-right: 8px;
+    }
+    .navbar-nav .nav-link {
+        color: #ffffff;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+    }
+    .navbar-nav .nav-link:hover {
+        color: #f0f0f0;
+    }
+
+    /* Función para determinar el color de contraste */
+    @function contrastColor($color) {
+        @if (lightness($color) > 50) {
+            @return #000000; /* Texto oscuro para fondos claros */
+        } @else {
+            @return #ffffff; /* Texto claro para fondos oscuros */
+        }
+    }
+
+    /* Aplicar color de contraste al texto */
+    .navbar-brand {
+        color: contrastColor(#007BFF);
+    }
+</style>
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img [src]="img" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            La Esquinita del Ahorro
+        </a>
+    </div>
+</nav>
