@@ -1,17 +1,18 @@
+
 <!-- Tu formulario para agregar/editar productos -->
-<form [formGroup]="agregarProducto" class="d-flex flex-column" (ngSubmit)="agregar()">
+<form [formGroup]="agregarProducto" class="d-flex flex-column" (ngSubmit)="agregarEditarProduct()">
     <!-- Campos del formulario -->
     <div class="mb-3">
-        <label for="titulo" class="form-label">Título del Producto</label>
-        <input formControlName="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese el título" required autocomplete="off">
-        <span *ngIf="agregarProducto.get('titulo')?.invalid && agregarProducto.get('titulo')?.touched" class = "text-danger">
+        <label for="nombre" class="form-label">Título del Producto</label>
+        <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese el título" required autocomplete="off">
+        <span *ngIf="agregarProducto.get('nombre')?.invalid && agregarProducto.get('nombre')?.touched" class="text-danger">
             El <strong>nombre del producto </strong>es requerido
         </span>
     </div>
     <div class="mb-3">
         <label for="creador" class="form-label">Personal a Cargo</label>
         <input formControlName="creador" type="text" class="form-control" id="creador" placeholder="Ingrese el nombre del creador" required autocomplete="off">
-        <span *ngIf="agregarProducto.get('creador')?.invalid && agregarProducto.get('creador')?.touched" class = "text-danger">
+        <span *ngIf="agregarProducto.get('creador')?.invalid && agregarProducto.get('creador')?.touched" class="text-danger">
             El <strong>nombre del personal </strong>es requerido
         </span>
     </div>
@@ -20,13 +21,24 @@
         <textarea formControlName="descripcion" class="form-control" id="descripcion" rows="3" placeholder="Ingrese la descripción" required></textarea>
     </div>
     <div class="mb-3">
-        <label for="fecha" class="form-label">Fecha de Creación</label>
+        <label for="precio" class="form-label">Precio del Producto</label>
+        <input formControlName="precio" type="number" class="form-control" id="precio" placeholder="Ingrese el precio" required>
+        <span *ngIf="agregarProducto.get('precio')?.invalid && agregarProducto.get('precio')?.touched" class="text-danger">
+            El <strong>precio del producto </strong>es requerido
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stock del Producto</label>
+        <input formControlName="stock" type="number" class="form-control" id="stock" placeholder="Ingrese el stock" required>
+        <span *ngIf="agregarProducto.get('stock')?.invalid && agregarProducto.get('stock')?.touched" class="text-danger">
+            El <strong>stock del producto </strong>es requerido
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="fechaCreacion" class="form-label">Fecha de Creación</label>
         <input formControlName="fechaCreacion" type="date" class="form-control" id="fechaCreacion" required>
     </div>
-
-    <!-- Botones -->
-    <div class="mt-3 d-flex justify-content-between">
-        <button type="button" routerLink="/" class="btn btn-danger">Volver</button>
-        <button type="submit" [disabled]="agregarProducto.invalid" class="btn btn-primary">Agregar</button>
-    </div>
 </form>
+
+
+

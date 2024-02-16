@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
+
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
 import { VerProductComponent } from './components/ver-product/ver-product.component';
-
-// export const routes: Routes = [];
 
 const routes: Routes = [
     {path: '', component: ListProductsComponent},
@@ -15,8 +16,12 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [
+        RouterModule.forRoot(routes),
+        CommonModule,
+        ReactiveFormsModule // Agrega ReactiveFormsModule aquí en la lista de imports
+    ],
     exports: [RouterModule]
 })
 
-export class AppRoutingModule{}
+export class AppRoutingModule {}

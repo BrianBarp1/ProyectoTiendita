@@ -4,11 +4,126 @@
         <h3>Lista de Productos</h3>
     </div>
     <div class="col-lg-6 text-end">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal" routerLink = "/agregar">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">
             Añadir Producto
         </button>
     </div>
 </div>
+
+<!-- Modal Agregar -->
+<div class="modal" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Añadiendo Nuevo Producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Título del Producto</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el título" required autocomplete="off" [(ngModel)]="product.nombre">
+                <span *ngIf="!product.nombre"class="text-danger">
+                    El <strong>nombre del producto</strong> es requerido
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="creador" class="form-label">Personal a Cargo</label>
+                <input type="text" class="form-control" id="creador" placeholder="Ingrese el nombre del creador" required autocomplete="off" [(ngModel)]="product.creador">
+                <span *ngIf="!product.creador" class="text-danger">
+                    El <strong>nombre del personal</strong> es requerido
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción del Producto</label>
+                <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese la descripción" required [(ngModel)] = "product.descripcion" ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio del Producto</label>
+                <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio" required [(ngModel)]="product.precio">
+                <span *ngIf="!product.precio" class="text-danger">
+                    El <strong>precio del producto</strong> es requerido
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock del Producto</label>
+                <input type="number" class="form-control" id="stock" placeholder="Ingrese el stock" required [(ngModel)]="product.stock">
+                <span *ngIf="!product.stock" class="text-danger">
+                    El <strong>stock del producto</strong> es requerido
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="fechaCreacion" class="form-label">Fecha de Creación</label>
+                <input type="date" class="form-control" id="fechaCreacion" required [(ngModel)]="product.fechaCreacion">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarProducto();">Añadir Producto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Modal Editar Producto -->
+<div class="modal" id="editarProductoModal" tabindex="-1" aria-labelledby="editarProductoModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Editando Producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" (click) = "editarProducto()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="nombreEdit" class="form-label">Título del Producto</label>
+                    <input type="text" class="form-control" id="nombreEdit" placeholder="Ingrese el título" required autocomplete="off" [(ngModel)]="product.nombre">
+                    <span *ngIf="!product.nombre" class="text-danger">
+                        El <strong>nombre del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="creadorEdit" class="form-label">Personal a Cargo</label>
+                    <input type="text" class="form-control" id="creadorEdit" placeholder="Ingrese el nombre del creador" required autocomplete="off" [(ngModel)]="product.creador">
+                    <span *ngIf="!product.creador" class="text-danger">
+                        El <strong>nombre del personal</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcionEdit" class="form-label">Descripción del Producto</label>
+                    <textarea class="form-control" id="descripcionEdit" rows="3" placeholder="Ingrese la descripción" required [(ngModel)]="product.descripcion"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="precioEdit" class="form-label">Precio del Producto</label>
+                    <input type="number" class="form-control" id="precioEdit" placeholder="Ingrese el precio" required [(ngModel)]="product.precio">
+                    <span *ngIf="!product.precio" class="text-danger">
+                        El <strong>precio del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="stockEdit" class="form-label">Stock del Producto</label>
+                    <input type="number" class="form-control" id="stockEdit" placeholder="Ingrese el stock" required [(ngModel)]="product.stock">
+                    <span *ngIf="!product.stock" class="text-danger">
+                        El <strong>stock del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaCreacionEdit" class="form-label">Fecha de Creación</label>
+                    <input type="date" class="form-control" id="fechaCreacionEdit" required [(ngModel)]="editDate">
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click) = "editarProducto()"> Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarProducto()">Editar Producto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <table *ngIf = "listProducts.length > 0" class="table table-hover mt-3">
     <thead>
@@ -18,20 +133,25 @@
             <th>Personal a cargo</th>
             <th>Descripción</th>
             <th>Fecha añadido</th>
+            <th>Precio</th>
+            <th>Stock</th>
         </tr>
 
         <tr *ngFor = "let products of listProducts">
             <td>
-                <a [routerLink]="['/ver', 1]">{{ products.titulo }}</a>
+                <a>{{ products.id }}</a>
             </td>
+            <td>{{ products.nombre }}</td>
             <td>{{ products.creador }}</td>
             <td>{{ products.descripcion }}</td>
-            <td>{{ products.fechaCreacion }}</td>
+            <td>{{ products.fechaCreacion | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ products.precio}}</td>
+            <td>{{ products.stock}}</td>
             <td>
-                <button class="btn btn-primary btn-sm float-end">Editar</button>
+                <button (click)="editarProduct(products.id)" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal" data-bs-target="#editarProductoModal">Editar</button>
             </td>
             <td style = "width: 10%, " >
-                <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+                <button (click)="eliminarProducts(products.id)" class="btn btn-danger btn-sm float-end">Eliminar</button>
             </td>
         </tr>
     </thead>

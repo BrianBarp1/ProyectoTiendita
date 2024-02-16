@@ -5,9 +5,6 @@ import { AgregarEditarProductoComponent } from './components/agregar-editar-prod
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { VerProductComponent } from './components/ver-product/ver-product.component';
 
-
-
-
 @Component({
   selector: 'app-root',
   // imports: [RouterOutlet, NavbarComponent,AgregarEditarProductoComponent,ListProductsComponent,VerProductComponent],
