@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
 import { VerProductComponent } from './components/ver-product/ver-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AgregarEditarProductoComponent,
     ListProductsComponent,
     VerProductComponent,
+    SidebarComponent,
     
   ],
   imports: [
