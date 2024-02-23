@@ -18,6 +18,5 @@ namespace backend.Models
         [Required]
         public DateTime FechaCreacion { get; set; }
 
-        
     }
 }

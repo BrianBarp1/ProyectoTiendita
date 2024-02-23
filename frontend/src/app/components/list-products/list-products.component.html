@@ -10,59 +10,60 @@
     </div>
 </div>
 
-<!-- Modal Agregar -->
+<!-- Modal Agregar Producto -->
 <div class="modal" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModal" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5">Añadiendo Nuevo Producto</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Añadiendo Nuevo Producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Título del Producto</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el título" required autocomplete="off" [(ngModel)]="product.nombre">
+                    <span *ngIf="!product.nombre" class="text-danger">
+                        El <strong>nombre del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="creador" class="form-label">Personal a Cargo</label>
+                    <input type="text" class="form-control" id="creador" placeholder="Ingrese el nombre del creador" required autocomplete="off" [(ngModel)]="product.creador">
+                    <span *ngIf="!product.creador" class="text-danger">
+                        El <strong>nombre del personal</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción del Producto</label>
+                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese la descripción" required [(ngModel)]="product.descripcion"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio del Producto</label>
+                    <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio" required [(ngModel)]="product.precio">
+                    <span *ngIf="!product.precio" class="text-danger">
+                        El <strong>precio del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="stock" class="form-label">Stock del Producto</label>
+                    <input type="number" class="form-control" id="stock" placeholder="Ingrese el stock" required [(ngModel)]="product.stock">
+                    <span *ngIf="!product.stock" class="text-danger">
+                        El <strong>stock del producto</strong> es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaCreacion" class="form-label">Fecha de Creación</label>
+                    <input type="date" class="form-control" id="fechaCreacion" required [(ngModel)]="product.fechaCreacion">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarProducto()">Añadir Producto</button>
+            </div>
         </div>
-        <div class="modal-body">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Título del Producto</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el título" required autocomplete="off" [(ngModel)]="product.nombre">
-                <span *ngIf="!product.nombre"class="text-danger">
-                    El <strong>nombre del producto</strong> es requerido
-                </span>
-            </div>
-            <div class="mb-3">
-                <label for="creador" class="form-label">Personal a Cargo</label>
-                <input type="text" class="form-control" id="creador" placeholder="Ingrese el nombre del creador" required autocomplete="off" [(ngModel)]="product.creador">
-                <span *ngIf="!product.creador" class="text-danger">
-                    El <strong>nombre del personal</strong> es requerido
-                </span>
-            </div>
-            <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción del Producto</label>
-                <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese la descripción" required [(ngModel)] = "product.descripcion" ></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="precio" class="form-label">Precio del Producto</label>
-                <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio" required [(ngModel)]="product.precio">
-                <span *ngIf="!product.precio" class="text-danger">
-                    El <strong>precio del producto</strong> es requerido
-                </span>
-            </div>
-            <div class="mb-3">
-                <label for="stock" class="form-label">Stock del Producto</label>
-                <input type="number" class="form-control" id="stock" placeholder="Ingrese el stock" required [(ngModel)]="product.stock">
-                <span *ngIf="!product.stock" class="text-danger">
-                    El <strong>stock del producto</strong> es requerido
-                </span>
-            </div>
-            <div class="mb-3">
-                <label for="fechaCreacion" class="form-label">Fecha de Creación</label>
-                <input type="date" class="form-control" id="fechaCreacion" required [(ngModel)]="product.fechaCreacion">
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarProducto();">Añadir Producto</button>
-        </div>
-      </div>
     </div>
 </div>
+
 
 <!-- Modal Editar Producto -->
 <div class="modal" id="editarProductoModal" tabindex="-1" aria-labelledby="editarProductoModal" aria-hidden="true">

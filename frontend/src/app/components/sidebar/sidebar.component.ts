@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Routes, Route } from '@angular/router';
-import { SidebarService } from '../../services/sidebar.service';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit{
+export class SidebarComponent implements OnInit {
 
-  menuItems?:any[];
+  constructor(private router: Router) {}
 
-  constructor(private sideBarService: SidebarService){
-    this.menuItems= this.sideBarService.menu;
-    console.log(this.menuItems)
-  }
+  ngOnInit(): void {}
 
-  ngOnInit(): void{
-
+  @HostListener('click', ['$event.target'])
+  onClick(target: any) {
+    // Verifica si el elemento clickeado es un enlace del menú
+    if (target.tagName === 'A') {
+      // Obtiene la URL del enlace clickeado
+      const url = target.getAttribute('routerLink');
+      // Verifica si la URL es válida
+      if (url) {
+        // Navega a la URL del enlace clickeado
+        this.router.navigateByUrl(url);
+      }
+    }
   }
 }

@@ -6,14 +6,16 @@ import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsMo
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
 import { VerProductComponent } from './components/ver-product/ver-product.component';
+import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [
-    {path: '', component: ListProductsComponent},
-    {path: 'agregar', component: AgregarEditarProductoComponent},
-    {path: 'editar/:id', component: AgregarEditarProductoComponent},
-    {path: 'ver/:id', component: VerProductComponent},
-    {path: '**', redirectTo: '/', pathMatch: 'full'}
-]
+    { path: '', component: ListProductsComponent },
+    { path: 'agregar', component: AgregarEditarProductoComponent },
+    { path: 'editar/:id', component: AgregarEditarProductoComponent },
+    { path: 'clientes', component: ClientComponent }, // Corregir la ruta de 'clientes'
+    { path: 'ver/:id', component: VerProductComponent },
+    { path: '**', redirectTo: '/', pathMatch: 'full' }
+];
 
 @NgModule({
     imports: [
@@ -23,5 +25,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-
 export class AppRoutingModule {}

@@ -7,6 +7,7 @@ namespace backend
     {
 
         public DbSet<Producto> Producto { get; set; }
+        public DbSet<Producto> Client { get; set; }
 
         public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
         {

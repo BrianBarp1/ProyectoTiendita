@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
+import { Client } from '../interfaces/client';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class ProductService {
   agregarProducto(nuevoProducto: Product) {
     throw new Error('Method not implemented.');
@@ -15,8 +15,8 @@ export class ProductService {
     throw new Error('Method not implemented.');
   }
 
-  private myAppUrl = 'https://localhost:44309/'
-  private myApiUrl = 'api/backend/'
+  private myAppUrl = 'https://localhost:44309/';
+  private myApiUrl = 'api/backend/';
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,7 @@ export class ProductService {
   }
 
   getProduct(id: number){
-    return this.http.get(this.myAppUrl + this.myApiUrl + id)
+    return this.http.get(this.myAppUrl + this.myApiUrl + id);
   }
 
   saveProduct(product: Product): Observable<any>{
@@ -38,5 +38,36 @@ export class ProductService {
 
   updateProduct(id: number , product: Product): Observable<any>{
     return this.http.put(this.myAppUrl + this.myApiUrl + id, product);
+  }
+}
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ClientService {
+  private myAppUrl = 'https://localhost:44309/';
+  private myApiUrl = 'api/clientes/';
+
+  constructor(private http: HttpClient) { }
+
+  getListClient(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.myAppUrl + this.myApiUrl);
+  }
+
+  deleteClient(id: number): Observable<any> {
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id);
+  }
+
+  getClient(id: number): Observable<Client> {
+    return this.http.get<Client>(this.myAppUrl + this.myApiUrl + id);
+  }
+
+  saveClient(client: Client): Observable<Client> {
+    return this.http.post<Client>(this.myAppUrl + this.myApiUrl, client);
+  }
+
+  updateClient(id: number , client: Client): Observable<Client> {
+    return this.http.put<Client>(this.myAppUrl + this.myApiUrl + id, client);
   }
 }

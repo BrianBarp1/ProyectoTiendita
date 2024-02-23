@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JkVpd2pqkyy54pP+/8Xi/eVz2CatIlS0z813lmVRYUMYi0Tp/TIyKseIGrgj03DqreF8RE+88Ok5q7FBNwDjYA==",
+  "dgSpecHash": "WXh+lMuAw6QTBREi88cvl7S3Wa9+GfsMP1awpRRQJ589zx30CHT07dopQKu/uw/pqFC2NLFIoOmrIe32uggfkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Brian Barp\\Desktop\\ProyectoTienda\\backend\\backend\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Brian Barp\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Brian Barp\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
