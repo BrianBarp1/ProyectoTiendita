@@ -6,13 +6,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace backend.Migrations
 {
     /// <inheritdoc />
-    public partial class Correcciones : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Libro");
+            migrationBuilder.CreateTable(
+                name: "Client",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DNI = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Client", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Producto",
@@ -37,23 +50,10 @@ namespace backend.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Producto");
+                name: "Client");
 
-            migrationBuilder.CreateTable(
-                name: "Libro",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Creador = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Libro", x => x.Id);
-                });
+            migrationBuilder.DropTable(
+                name: "Producto");
         }
     }
 }

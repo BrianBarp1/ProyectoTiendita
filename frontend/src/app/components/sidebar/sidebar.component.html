@@ -2,13 +2,17 @@
   <div class="position-sticky">
     <div class="list-group list-group-flush mx-3 mt-4">
       <a [routerLink]="['/clientes']"
+         id="ClientActivate"
          routerLinkActive="active"
+         (click)="change('ClientActivate')"
          class="list-group-item list-group-item-action py-2 ripple"
          aria-current="true">
         <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Clientes</span>
       </a>
       <a [routerLink]="['/productos']"
+         id="ProductActivate"
          routerLinkActive="active"
+         (click)="change('ProductActivate')"
          class="list-group-item list-group-item-action py-2 ripple">
         <i class="fas fa-chart-area fa-fw me-3"></i><span>Productos</span>
       </a>

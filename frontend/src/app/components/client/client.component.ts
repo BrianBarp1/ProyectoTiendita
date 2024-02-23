@@ -13,7 +13,6 @@ export class ClientComponent implements OnInit {
   id = 0;
   client: Client = {} as Client; // Inicializa client como un objeto vacío
   indiceClienteEditado: number = -1;
-  agregarClienteForm: FormGroup;
   editDate: string = "";
 
   listClients: Client[] = [];
@@ -23,13 +22,6 @@ export class ClientComponent implements OnInit {
               private router: Router,
               private aRoute: ActivatedRoute,
               private _cliserv: ClientService) {
-    this.agregarClienteForm = this.fb.group({
-      nombre: ['', Validators.required],
-      DNI: ['', Validators.required],
-      direccion: ['', Validators.required],
-      telefono: ['', Validators.required],
-      fechaCreacion: ['', Validators.required]
-    });
   }
 
   ngOnInit(): void {

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
 
   constructor(private router: Router) {}
+  idElement = ''
 
   ngOnInit(): void {}
 
@@ -24,5 +25,11 @@ export class SidebarComponent implements OnInit {
         this.router.navigateByUrl(url);
       }
     }
+  }
+
+  change(id: string){
+    document.getElementById(this.idElement)?.classList.remove('active')
+    this.idElement = id;
+    document.getElementById(id)?.classList.add('active')
   }
 }

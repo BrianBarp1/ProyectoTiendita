@@ -47,7 +47,7 @@ export class ProductService {
 })
 export class ClientService {
   private myAppUrl = 'https://localhost:44309/';
-  private myApiUrl = 'api/clientes/';
+  private myApiUrl = 'api/client/';
 
   constructor(private http: HttpClient) { }
 

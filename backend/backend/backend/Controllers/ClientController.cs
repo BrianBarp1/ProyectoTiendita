@@ -21,11 +21,11 @@ namespace backend.Controllers
 
         // GET: api/<ClientController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Producto>>> Get()
+        public async Task<ActionResult<IEnumerable<Client>>> Get()
         {
             try
             {
-                return await _context.Producto.ToListAsync();
+                return await _context.Client.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -35,18 +35,18 @@ namespace backend.Controllers
 
         // GET api/<ClientController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Producto>> Get(int id)
+        public async Task<ActionResult<Client>> Get(int id)
         {
             try
             {
-                var product = await _context.Producto.FindAsync(id);
+                var client = await _context.Client.FindAsync(id);
 
-                if (product == null)
+                if (client == null)
                 {
                     return NotFound();
                 }
 
-                return product;
+                return client;
             }
             catch (Exception ex)
             {
@@ -56,13 +56,13 @@ namespace backend.Controllers
 
         // POST api/<ClientController>
         [HttpPost]
-        public async Task<ActionResult<Producto>> Post(Producto producto)
+        public async Task<ActionResult<Producto>> Post(Client client)
         {
             try
             {
-                _context.Add(producto);
+                _context.Add(client);
                 await _context.SaveChangesAsync();
-                return CreatedAtAction(nameof(Get), new { id = producto.Id }, producto);
+                return CreatedAtAction(nameof(Get), new { id = client.Id }, client);
             }
             catch (Exception ex)
             {
@@ -72,16 +72,16 @@ namespace backend.Controllers
 
         // PUT api/<ClientController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, Producto producto)
+        public async Task<IActionResult> Put(int id, Client client)
         {
             try
             {
-                if (id != producto.Id)
+                if (id != client.Id)
                 {
                     return BadRequest();
                 }
 
-                _context.Entry(producto).State = EntityState.Modified;
+                _context.Entry(client).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return NoContent();
@@ -98,14 +98,14 @@ namespace backend.Controllers
         {
             try
             {
-                var product = await _context.Producto.FindAsync(id);
+                var client = await _context.Client.FindAsync(id);
 
-                if (product == null)
+                if (client == null)
                 {
                     return NotFound();
                 }
 
-                _context.Producto.Remove(product);
+                _context.Client.Remove(client);
                 await _context.SaveChangesAsync();
 
                 return NoContent();

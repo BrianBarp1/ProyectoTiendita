@@ -9,7 +9,7 @@ import { VerProductComponent } from './components/ver-product/ver-product.compon
 import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [
-    { path: '', component: ListProductsComponent },
+    { path: 'productos', component: ListProductsComponent },
     { path: 'agregar', component: AgregarEditarProductoComponent },
     { path: 'editar/:id', component: AgregarEditarProductoComponent },
     { path: 'clientes', component: ClientComponent }, // Corregir la ruta de 'clientes'

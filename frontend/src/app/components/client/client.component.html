@@ -10,36 +10,34 @@
 </div>
 
 <!-- Modal Agregar Cliente -->
-<div class="modal" id="agregarClienteModal" tabindex="-1" aria-labelledby="agregarClienteModal" aria-hidden="true">    <div class="modal-dialog">
+<div class="modal" id="agregarClienteModal" tabindex="-1" aria-labelledby="agregarClienteModal" aria-hidden="true">    
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Añadiendo Nuevo Cliente</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form (ngSubmit)="agregarCliente()">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required autocomplete="off" [(ngModel)]="client.nombre">
-                        <span *ngIf="!client.nombre" class="text-danger">El nombre es requerido</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dni" class="form-label">DNI</label>
-                        <input type="text" class="form-control" id="dni" placeholder="Ingrese el DNI" required autocomplete="off" [(ngModel)]="client.dni">
-                        <span *ngIf="!client.dni" class="text-danger">El DNI es requerido</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese la dirección" required autocomplete="off" [(ngModel)]="client.direccion">
-                        <span *ngIf="!client.direccion" class="text-danger">La dirección es requerida</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" placeholder="Ingrese el teléfono" required autocomplete="off" [(ngModel)]="client.telefono">
-                        <span *ngIf="!client.telefono" class="text-danger">El teléfono es requerido</span>
-                    </div>
-                  
-                </form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required autocomplete="off" [(ngModel)]="client.nombre">
+                    <span *ngIf="!client.nombre" class="text-danger">El nombre es requerido</span>
+                </div>
+                <div class="mb-3">
+                    <label for="dni" class="form-label">DNI</label>
+                    <input type="text" class="form-control" id="dni" placeholder="Ingrese el DNI" required autocomplete="off" [(ngModel)]="client.dni">
+                    <span *ngIf="!client.dni" class="text-danger">El DNI es requerido</span>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Ingrese la dirección" required autocomplete="off" [(ngModel)]="client.direccion">
+                    <span *ngIf="!client.direccion" class="text-danger">La dirección es requerida</span>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="Ingrese el teléfono" required autocomplete="off" [(ngModel)]="client.telefono">
+                    <span *ngIf="!client.telefono" class="text-danger">El teléfono es requerido</span>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -50,35 +48,34 @@
 </div>
 
 <!-- Modal Editar Cliente -->
-<div class="modal" id="editarClienteModal" tabindex="-1" aria-labelledby="editarClienteModal" aria-hidden="true">    <div class="modal-dialog">
+<div class="modal" id="editarClienteModal" tabindex="-1" aria-labelledby="editarClienteModal" aria-hidden="true">    
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Editando Cliente</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form (ngSubmit)="editarCliente()">
-                    <div class="mb-3">
-                        <label for="nombreEdit" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombreEdit" placeholder="Ingrese el nombre" required [(ngModel)]="client.nombre">
-                        <span *ngIf="!client.nombre" class="text-danger">El nombre es requerido</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dniEdit" class="form-label">DNI</label>
-                        <input type="text" class="form-control" id="dniEdit" placeholder="Ingrese el DNI" required [(ngModel)]="client.dni">
-                        <span *ngIf="!client.dni" class="text-danger">El DNI es requerido</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="direccionEdit" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccionEdit" placeholder="Ingrese la dirección" required [(ngModel)]="client.direccion">
-                        <span *ngIf="!client.direccion" class="text-danger">La dirección es requerida</span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefonoEdit" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefonoEdit" placeholder="Ingrese el teléfono" required [(ngModel)]="client.telefono">
-                        <span *ngIf="!client.telefono" class="text-danger">El teléfono es requerido</span>
-                    </div>
-                </form>
+                <div class="mb-3">
+                    <label for="nombreEdit" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombreEdit" placeholder="Ingrese el nombre" required [(ngModel)]="client.nombre">
+                    <span *ngIf="!client.nombre" class="text-danger">El nombre es requerido</span>
+                </div>
+                <div class="mb-3">
+                    <label for="dniEdit" class="form-label">DNI</label>
+                    <input type="text" class="form-control" id="dniEdit" placeholder="Ingrese el DNI" required [(ngModel)]="client.dni">
+                    <span *ngIf="!client.dni" class="text-danger">El DNI es requerido</span>
+                </div>
+                <div class="mb-3">
+                    <label for="direccionEdit" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccionEdit" placeholder="Ingrese la dirección" required [(ngModel)]="client.direccion">
+                    <span *ngIf="!client.direccion" class="text-danger">La dirección es requerida</span>
+                </div>
+                <div class="mb-3">
+                    <label for="telefonoEdit" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefonoEdit" placeholder="Ingrese el teléfono" required [(ngModel)]="client.telefono">
+                    <span *ngIf="!client.telefono" class="text-danger">El teléfono es requerido</span>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

@@ -14,7 +14,6 @@ export class ListProductsComponent implements OnInit {
   id = 0;
   product: Product = new Product();
   indiceProductoEditado: number = -1;
-  agregarProductoForm: FormGroup;
   editDate: string= "";
 
   listProducts: Product[] = [];
@@ -24,14 +23,6 @@ export class ListProductsComponent implements OnInit {
               private router: Router,
               private aRoute: ActivatedRoute,
               private _prodserv: ProductService) {
-    this.agregarProductoForm = this.fb.group({
-      nombre: ['', Validators.required],
-      creador: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      precio: ['', Validators.required],
-      stock: ['', Validators.required],
-      fechaCreacion: ['', Validators.required]
-    });
   }
 
   ngOnInit(): void {
