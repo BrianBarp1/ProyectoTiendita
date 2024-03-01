@@ -12,10 +12,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
-import { VerProductComponent } from './components/ver-product/ver-product.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ClientComponent } from './components/client/client.component';
-import { ClientService } from './services/frontend.service'; // Importa el servicio ClientService
+import { OrdersComponent } from './components/orders/orders.component';
+
+// Importa el servicio ClientService
+import { ClientService } from './services/frontend.service'; 
 
 @NgModule({
   declarations: [
@@ -23,9 +25,9 @@ import { ClientService } from './services/frontend.service'; // Importa el servi
     NavbarComponent,
     AgregarEditarProductoComponent,
     ListProductsComponent,
-    VerProductComponent,
     SidebarComponent,
-    ClientComponent
+    ClientComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

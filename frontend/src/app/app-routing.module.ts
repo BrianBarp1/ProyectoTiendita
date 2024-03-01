@@ -5,15 +5,15 @@ import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsMo
 
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
-import { VerProductComponent } from './components/ver-product/ver-product.component';
 import { ClientComponent } from './components/client/client.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const routes: Routes = [
     { path: 'productos', component: ListProductsComponent },
     { path: 'agregar', component: AgregarEditarProductoComponent },
     { path: 'editar/:id', component: AgregarEditarProductoComponent },
-    { path: 'clientes', component: ClientComponent }, // Corregir la ruta de 'clientes'
-    { path: 'ver/:id', component: VerProductComponent },
+    { path: 'clientes', component: ClientComponent },
+    { path: 'order', component: OrdersComponent }, 
     { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 

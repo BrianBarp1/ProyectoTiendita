@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AgregarEditarProductoComponent } from './components/agregar-editar-producto/agregar-editar-producto.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
-import { VerProductComponent } from './components/ver-product/ver-product.component';
 
 @Component({
   selector: 'app-root',

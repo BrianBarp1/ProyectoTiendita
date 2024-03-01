@@ -3,6 +3,7 @@ import { Client } from '../../interfaces/client';
 import { ClientService } from '../../services/frontend.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-client',
@@ -17,12 +18,14 @@ export class ClientComponent implements OnInit {
 
   listClients: Client[] = [];
 
-  constructor(private fb: FormBuilder,
-              private clientService: ClientService, // Cambia el nombre de la variable de ClientService a clientService
-              private router: Router,
-              private aRoute: ActivatedRoute,
-              private _cliserv: ClientService) {
-  }
+  constructor(
+    private fb: FormBuilder,
+    private clientService: ClientService,
+    private router: Router,
+    private aRoute: ActivatedRoute,
+    private _cliserv: ClientService,
+    private sharedService: SharedService  // Importa e inyecta el servicio compartido aquí
+  ) {}
 
   ngOnInit(): void {
     this.getClients();
@@ -39,7 +42,7 @@ export class ClientComponent implements OnInit {
       }
     );
   }
-  
+
   editarClient(id: any) {
     this.clientService.getClient(id).subscribe(
       (data: Client) => { // Especifica el tipo de datos para 'data'
@@ -50,7 +53,6 @@ export class ClientComponent implements OnInit {
       }
     );
   }
-  
 
   agregarCliente() {
     console.log(this.client);
@@ -59,6 +61,10 @@ export class ClientComponent implements OnInit {
         this.getClients();
         console.log('Cliente guardado con éxito', data);
         this.client = {} as Client; // Reinicializa client como un objeto vacío
+  
+        // Emitir los cambios a través del servicio compartido
+        const nombresClientes: string[] = this.listClients.map(cliente => cliente.nombre); // Suponiendo que 'nombre' es el campo que contiene el nombre del cliente
+        this.sharedService.updateClientes(nombresClientes);
       },
       (error: any) => { // Especifica el tipo de datos para 'error'
         console.error('Error al guardar el cliente', error);
@@ -80,8 +86,6 @@ export class ClientComponent implements OnInit {
       }
     );
   }
-  
-
 
   guardarCambiosCliente() {
     const index = this.listClients.findIndex(item => item.id === this.client.id);
@@ -101,5 +105,4 @@ export class ClientComponent implements OnInit {
       }
     );
   }
-  
 }

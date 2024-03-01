@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Lista de Órdenes</h2>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarOrdenModal">
+      Añadir Orden
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Producto</th>
+        <th>Fecha</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of listOrders">
+        <td>{{ orden.id }}</td>
+        <td>{{ orden.date }}</td>
+        <td>{{ orden.client }}</td>
+        <td>{{ orden.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Primer Modal -->
+<div class="modal fade" id="agregarOrdenModal" tabindex="-1" aria-labelledby="agregarOrdenModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="agregarOrdenModalLabel">Añadir Orden</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenido del formulario para añadir orden -->
+        <form>
+          <div class="mb-3">
+            <label for="cliente">Cliente:</label>
+            <select class="form-select" id="cliente">
+              <option *ngFor="let client of clients" [value]="client.id">{{ client.nombre }}</option>
+            </select>
+          </div>               
+          <div class="mb-3">
+            <label for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha">
+          </div>              
+          <!-- Línea para agregar productos -->
+          <div class="mb-3">
+            <label for="producto">Producto:</label>
+            <div class="input-group">
+              <div class="dropdown">
+                <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  +
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <!-- Aquí van los elementos del menú desplegable -->
+                  <li><a class="dropdown-item" href="#">Producto 1</a></li>
+                  <li><a class="dropdown-item" href="#">Producto 2</a></li>
+                  <li><a class="dropdown-item" href="#">Producto 3</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="total">Total:</label>
+            <input type="text" class="form-control" id="total">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarOrden()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

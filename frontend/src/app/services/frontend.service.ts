@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
 import { Client } from '../interfaces/client';
+import { Order } from '../interfaces/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class ProductService {
   private myApiUrl = 'api/backend/';
 
   constructor(private http: HttpClient) { }
+
+  getAllProducts(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.myAppUrl + this.myApiUrl);
+  }
 
   getListProduct(): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl);
@@ -51,7 +56,12 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  getListClient(): Observable<Client[]> {
+  // Método para obtener todos los clientes
+  getAllClients(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.myAppUrl + this.myApiUrl);
+  }
+
+    getListClient(): Observable<Client[]> {
     return this.http.get<Client[]>(this.myAppUrl + this.myApiUrl);
   }
 
@@ -69,5 +79,24 @@ export class ClientService {
 
   updateClient(id: number , client: Client): Observable<Client> {
     return this.http.put<Client>(this.myAppUrl + this.myApiUrl + id, client);
+  }
+}
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class OrderService {
+  private myAppUrl = 'https://localhost:44309/';
+  private myApiUrl = 'api/Orders';
+
+  constructor(private http: HttpClient) { }
+
+  getListOrder(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.myAppUrl + this.myApiUrl);
+  }
+
+  saveOrder(order: Order): Observable<Order>{
+    return this.http.post<Order>(this.myAppUrl + this.myApiUrl, order);
   }
 }
