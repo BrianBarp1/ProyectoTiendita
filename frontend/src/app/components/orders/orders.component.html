@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Lista de Órdenes</h2>
+    <h2>Lista de Ordenes</h2>
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarOrdenModal">
       Añadir Orden
     </button>
@@ -10,7 +10,6 @@
       <tr>
         <th>ID</th>
         <th>Cliente</th>
-        <th>Producto</th>
         <th>Fecha</th>
         <th>Total</th>
       </tr>
@@ -18,9 +17,9 @@
     <tbody>
       <tr *ngFor="let orden of listOrders">
         <td>{{ orden.id }}</td>
-        <td>{{ orden.date }}</td>
         <td>{{ orden.client }}</td>
-        <td>{{ orden.total }}</td>
+        <td>{{ orden.date | date:'dd/MM/yyyy' }}</td>
+        <td>{{ calcularTotalProductos() }}</td>
       </tr>
     </tbody>
   </table>
@@ -36,39 +35,65 @@
       </div>
       <div class="modal-body">
         <!-- Contenido del formulario para añadir orden -->
-        <form>
-          <div class="mb-3">
-            <label for="cliente">Cliente:</label>
-            <select class="form-select" id="cliente">
-              <option *ngFor="let client of clients" [value]="client.id">{{ client.nombre }}</option>
-            </select>
-          </div>               
-          <div class="mb-3">
-            <label for="fecha">Fecha:</label>
-            <input type="date" class="form-control" id="fecha">
-          </div>              
-          <!-- Línea para agregar productos -->
-          <div class="mb-3">
-            <label for="producto">Producto:</label>
-            <div class="input-group">
-              <div class="dropdown">
-                <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                  +
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <!-- Aquí van los elementos del menú desplegable -->
-                  <li><a class="dropdown-item" href="#">Producto 1</a></li>
-                  <li><a class="dropdown-item" href="#">Producto 2</a></li>
-                  <li><a class="dropdown-item" href="#">Producto 3</a></li>
-                </ul>
+        <div class="mb-3">
+          <label for="cliente">Cliente:</label>
+          <select class="form-select" id="cliente" [(ngModel)]="client">
+            <option *ngFor="let c of clients" [value]="c.nombre">{{ c.nombre }}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="fecha">Fecha:</label>
+          <input type="date" class="form-control" id="fecha" [(ngModel)]="date">
+        </div>
+        <!-- Botón para mostrar/ocultar lista -->
+        <button class="btn btn-primary" (click)="toggleLista()">Datos de Orden</button>
+        <!-- Lista que se mostrará/ocultará -->
+        <div *ngIf="mostrarLista" class="mt-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-3 d-flex flex-row">
+                <div class="me-3">
+                  <label for="idProducto">ID:</label>
+                  <input type="number" class="form-control" id="idProducto" [value]="listOrders.length + 1" readonly style="border: none; outline: none; background-color: transparent;">
+                </div>                              
+                <div class="me-3">
+                  <label for="producto">Producto:</label>
+                  <select class="form-select" id="producto" [(ngModel)]="selectedProduct">
+                    <option *ngFor="let product of products" [ngValue]="product">{{ product.nombre }}</option>
+                  </select>
+                </div>                                        
+                <div class="me-3">
+                  <label for="cantidad">Cantidad:</label>
+                  <input type="number" class="form-control" id="cantidad" [(ngModel)]="productQuantity">
+                </div> 
+                <div class="me-3">
+                  <label for="total">Total:</label>
+                  <input type="text" class="form-control" id="total" [(ngModel)]="total">
+                </div>
+                <div>
+                  <button class="btn btn-primary" (click)="agregarOrdenModal()">Añadir Producto</button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="total">Total:</label>
-            <input type="text" class="form-control" id="total">
+        </div>
+        <!-- Lista de elementos añadidos -->
+        <div *ngIf="addedProductsList.length > 0" class="mt-3">
+          <h5>Elementos Añadidos:</h5>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col" *ngFor="let item of addedProductsList">
+              <div class="card mb-3">
+                <div class="card-body d-flex align-items-center">
+                  <div>
+                    <h6 class="card-title mb-0">Producto: {{ item.Producto}}</h6>
+                    <p class="card-text mb-0">Cantidad: {{ item.Cantidad }}</p>
+                    <p class="card-text mb-0">Total: {{ item.Total }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -77,4 +102,3 @@
     </div>
   </div>
 </div>
-

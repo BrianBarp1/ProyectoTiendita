@@ -1,34 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BackendController : ControllerBase
+    public class ModalListController : ControllerBase
     {
-        public readonly AplicationDbContext _context;
+        private readonly AplicationDbContext _context;
 
-        public BackendController(AplicationDbContext context)
+        public ModalListController(AplicationDbContext context)
         {
             _context = context;
         }
 
-
-        // GET: api/<BackendController>
+        // GET api/<ModalListController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<IEnumerable<ModalList>>> Get()
         {
             try
             {
-                var listBackend = await _context.Producto.ToListAsync();
-
-                return Ok(listBackend);
+                return await _context.ModalList.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -36,20 +33,20 @@ namespace backend.Controllers
             }
         }
 
-        // GET api/<BackendController>/5
+        // GET api/<ModalListController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<ActionResult<ModalList>> Get(int id)
         {
             try
             {
-                var back = await _context.Producto.FindAsync(id);
+                var modalList = await _context.ModalList.FindAsync(id);
 
-                if(back == null)
+                if (modalList == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(back);
+                return modalList;
             }
             catch (Exception ex)
             {
@@ -57,15 +54,15 @@ namespace backend.Controllers
             }
         }
 
-        // POST api/<BackendController>
+        // POST api/Orders/ModalList
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Producto libro)
+        public async Task<ActionResult<ModalList>> PostOrdersModalList(ModalList modalList)
         {
             try
             {
-                _context.Add(libro);
+                _context.Add(modalList);
                 await _context.SaveChangesAsync();
-                return Ok (libro);
+                return CreatedAtAction(nameof(Get), new { id = modalList.Id }, modalList);
             }
             catch (Exception ex)
             {
@@ -73,41 +70,45 @@ namespace backend.Controllers
             }
         }
 
-        // PUT api/<BackendController>/5
+        // PUT api/<ModalListController>/5
         [HttpPut("{id}")]
-        public async Task <IActionResult> Put(int id, [FromBody] Producto libro)
+        public async Task<IActionResult> Put(int id, ModalList modalList)
         {
             try
             {
-                if(id != libro.Id)
+                if (id != modalList.Id)
                 {
                     return BadRequest();
                 }
-                _context.Update(libro);
+
+                _context.Entry(modalList).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                return Ok(new {message = "Producto actualizado con exito!"});
+
+                return NoContent();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
-        // DELETE api/<BackendController>/5
+        // DELETE api/<ModalListController>/5
         [HttpDelete("{id}")]
-        public async Task <IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                var libro = await _context.Producto.FindAsync(id);
-                if(libro == null)
+                var modalList = await _context.ModalList.FindAsync(id);
+
+                if (modalList == null)
                 {
                     return NotFound();
                 }
-                _context.Producto.Remove(libro);
+
+                _context.ModalList.Remove(modalList);
                 await _context.SaveChangesAsync();
-                return Ok(new {message = "Producto eliminado con exito"});
+
+                return NoContent();
             }
             catch (Exception ex)
             {

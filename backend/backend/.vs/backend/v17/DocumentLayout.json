@@ -3,48 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240223141019_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240223141019_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\controllers\\backendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\controllers\\backendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\models\\modallist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\models\\modallist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\controllers\\modallistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\controllers\\modallistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\aplicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\aplicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240311165840_cambiosmodallist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240311165840_cambiosmodallist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\models\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\models\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240308135727_migraconconorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240308135727_migraconconorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\controllers\\backendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\controllers\\backendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240223141019_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240223141019_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240304162811_migracionorder2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240304162811_migracionorder2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240304162239_migracionconorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240304162239_migracionconorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|c:\\users\\brian barp\\documents\\proyectotiendita-master\\proyectotiendita-master\\backend\\backend\\backend\\migrations\\20240318135029_correcciones 405.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91D5304-B30F-4043-9126-DC09C18A5627}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20240318135029_correcciones 405.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -57,57 +93,173 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20240223141019_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240223141019_InitialMigration.cs",
-              "RelativeDocumentMoniker": "backend\\Migrations\\20240223141019_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240223141019_InitialMigration.cs",
-              "RelativeToolTip": "backend\\Migrations\\20240223141019_InitialMigration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:10:20.539Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Startup.cs",
-              "RelativeDocumentMoniker": "backend\\Startup.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Startup.cs",
-              "RelativeToolTip": "backend\\Startup.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwCsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:04:40.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\AplicationDbContext.cs",
               "RelativeDocumentMoniker": "backend\\AplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\AplicationDbContext.cs",
               "RelativeToolTip": "backend\\AplicationDbContext.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAgAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:04:40.034Z"
+              "WhenOpened": "2024-03-08T13:44:50.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "backend\\Controllers\\OrdersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T09:37:25.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Startup.cs",
+              "RelativeDocumentMoniker": "backend\\Startup.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Startup.cs",
+              "RelativeToolTip": "backend\\Startup.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAuwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T08:04:40.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackendController.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\BackendController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\BackendController.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\BackendController.cs",
+              "RelativeToolTip": "backend\\Controllers\\BackendController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwCMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T08:04:39.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "backend\\Migrations\\AplicationDbContextModelSnapshot.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAQwBoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T13:27:40.105Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ModalList.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\ModalList.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\ModalList.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\ModalList.cs",
+              "RelativeToolTip": "backend\\Models\\ModalList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:33:16.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ModalListController.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\ModalListController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\ModalListController.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\ModalListController.cs",
+              "RelativeToolTip": "backend\\Controllers\\ModalListController.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAkwF8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:41:07.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20240318135029_Correcciones 405.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240318135029_Correcciones 405.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240318135029_Correcciones 405.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240318135029_Correcciones 405.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240318135029_Correcciones 405.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T13:50:30.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Client.cs",
+              "RelativeToolTip": "backend\\Models\\Client.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T08:09:21.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
               "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Program.cs",
               "RelativeToolTip": "backend\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAATAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwBgAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T08:04:40.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "20240311165840_CambiosModalList.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240311165840_CambiosModalList.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240311165840_CambiosModalList.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240311165840_CambiosModalList.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240311165840_CambiosModalList.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:58:41.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Orders.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Orders.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Orders.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Orders.cs",
+              "RelativeToolTip": "backend\\Models\\Orders.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAwwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T09:38:49.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Producto.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Producto.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Producto.cs",
+              "RelativeToolTip": "backend\\Models\\Producto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAwAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T08:04:40.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\appsettings.json",
@@ -119,48 +271,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\ClientController.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "backend\\Controllers\\ClientController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAQwDEAAAANAAAA",
+              "DocumentIndex": 13,
+              "Title": "20240308135727_MigraconConOrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240308135727_MigraconConOrderDetail.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240308135727_MigraconConOrderDetail.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240308135727_MigraconConOrderDetail.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240308135727_MigraconConOrderDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:11:33.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2024-03-08T13:57:28.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "backend\\Models\\Client.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Client.cs",
-              "RelativeToolTip": "backend\\Models\\Client.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:09:21.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Producto.cs",
-              "RelativeDocumentMoniker": "backend\\Models\\Producto.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Models\\Producto.cs",
-              "RelativeToolTip": "backend\\Models\\Producto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:04:40.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "backend\\appsettings.Development.json",
@@ -172,19 +295,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BackendController.cs",
-              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\BackendController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\BackendController.cs",
-              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Controllers\\BackendController.cs",
-              "RelativeToolTip": "backend\\Controllers\\BackendController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwB8AAAANAAAA",
+              "DocumentIndex": 17,
+              "Title": "20240304162811_MigracionOrder2.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240304162811_MigracionOrder2.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240304162811_MigracionOrder2.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240304162811_MigracionOrder2.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240304162811_MigracionOrder2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T08:04:39.996Z"
+              "WhenOpened": "2024-03-04T16:28:11.62Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
+              "Title": "20240304162239_MigracionconOrders.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240304162239_MigracionconOrders.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240304162239_MigracionconOrders.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240304162239_MigracionconOrders.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240304162239_MigracionconOrders.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAIBQwBYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T16:22:39.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240223141019_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240223141019_InitialMigration.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20240223141019_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\Migrations\\20240223141019_InitialMigration.cs",
+              "RelativeToolTip": "backend\\Migrations\\20240223141019_InitialMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T14:10:20.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "backend.csproj",
               "DocumentMoniker": "C:\\Users\\Brian Barp\\Documents\\ProyectoTiendita-master\\ProyectoTiendita-master\\backend\\backend\\backend\\backend.csproj",
               "RelativeDocumentMoniker": "backend\\backend.csproj",

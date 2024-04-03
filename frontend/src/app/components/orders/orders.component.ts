@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/frontend.service';
-import { Order } from '../../interfaces/orders';
-import { ClientService } from '../../services/frontend.service'; // Importa el servicio de cliente
-import { ProductService } from '../../services/frontend.service'; // Importa el servicio de producto
+import { Orders } from '../../interfaces/orders';
+import { ClientService } from '../../services/frontend.service';
+import { ProductService } from '../../services/frontend.service';
 import { SharedService } from '../../services/shared.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-orders',
@@ -11,69 +12,178 @@ import { SharedService } from '../../services/shared.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  id: number | undefined;
+  id: number = 0;
   date: string = '';
   client: string = '';
-  total: number | undefined;
   showModal: boolean = false;
-  listOrders: Order[] = [];
-  clients: any[] = []; // Lista de clientes
-  products: any[] = []; // Lista de productos
-  dropdownOpen: boolean = false; // Estado del desplegable
-
-  order!: Order;
+  listOrders: Orders[] = [];
+  clients: any[] = [];
+  products: any[] = [];
+  dropdownOpen: boolean = false;
+  selectedProduct: any;
+  showAdditionalContent: boolean = false;
+  productQuantity: number = 1;
+  mostrarLista: boolean = false; // Variable para controlar la visibilidad de la lista en el modal
+  total = 0;
+  addedProductsList: any[] = [];
+  selectedClientOrders: Orders[] = [];
 
   constructor(
     private orderService: OrderService,
-    private clientService: ClientService, // Servicio de cliente
-    private productService: ProductService, // Servicio de producto
-    private sharedService: SharedService
+    private clientService: ClientService,
+    private productService: ProductService,
+    private sharedService: SharedService,
   ) {}
 
   ngOnInit(): void {
+    this.getClients();
+    this.getProducts();
     this.getOrders();
-    this.getClients(); // Obtener lista de clientes al inicializar el componente
-    this.getProducts(); // Obtener lista de productos al inicializar el componente
     this.listenToChanges();
   }
 
   getOrders() {
-    // Tu lógica para obtener las órdenes
+    this.orderService.getListOrder().subscribe(
+      (data: Orders[]) => {
+        this.listOrders = data;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   getClients() {
-    // Tu lógica para obtener los clientes
+    this.clientService.getAllClients().subscribe(
+      (data: any[]) => {
+        this.clients = data;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   getProducts() {
-    // Tu lógica para obtener los productos
+    this.productService.getAllProducts().subscribe(
+      (data: any[]) => {
+        this.products = data;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   listenToChanges() {
-    // Tu lógica para escuchar cambios
+    this.sharedService.clientes$.subscribe(
+      (clientes: any[]) => {
+        this.clients = clientes;
+      }
+    );
   }
 
   guardarOrden() {
-    // Tu lógica para guardar la orden
+    if (!this.client || !this.date) {
+      console.log('Por favor, complete todos los campos antes de guardar la orden.');
+      return;
+    }
+
+    const newOrder: Orders = {
+      id: 0,
+      date: new Date(this.date),
+      client: this.client,
+      total: 0,
+    };
+
+    this.orderService.saveOrder(newOrder).subscribe(
+      (response: Orders) => {
+        console.log('Orden guardada con éxito:', response);
+        this.listOrders.push(response);
+        this.clearFields();
+        
+        // Filtrar órdenes por cliente seleccionado
+        this.selectedClientOrders = this.listOrders.filter(order => order.client === this.client);
+      },
+      (error: any) => {
+        console.error('Error al guardar la orden:', error);
+      }
+    );
   }
 
-  onSubmit() {
-    // Tu lógica para el envío del formulario
+  agregarOrdenModal() {
+    console.log(this.selectedProduct, this.productQuantity);
+    if (!this.selectedProduct || this.productQuantity <= 0) {
+      console.log('Por favor seleccione un producto y especifique una cantidad valida.');
+      return;
+    }
+  
+    const orderDetails = {
+      Producto: this.selectedProduct.id,
+      Cantidad: this.productQuantity,
+      Total: this.calculateTotal(),
+    };
+  
+    this.orderService.saveOrderModal(orderDetails).subscribe(
+      (response: any) => {
+        console.log('Orden agregada exitosamente:', response);
+        // Agregar el producto a la lista addedProductsList
+        this.addedProductsList.push({
+          Producto: this.selectedProduct.id,
+          Cantidad: this.productQuantity,
+          Total: this.calculateTotal()
+        });
+  
+        this.clearFields();
+      },
+      (error: any) => {
+        console.error('Error al agregar la orden:', error);
+      }
+    );
+  
+    this.mostrarLista = false; // Ocultar la lista en el modal después de agregar la orden
+  }
+  
+
+  // Método para calcular el total
+  calculateTotal(): number {
+    console.log(this.selectedProduct);
+    return (this.selectedProduct?.precio || 0) * (this.productQuantity || 0);
+  }
+
+  clearFields() {
+    this.id = 0;
+    this.date = '';
+    this.client = '';
+    this.showModal = false;
+    this.selectedProduct = null;
+  }
+
+  calcularTotalProductos(): number {
+    let totalProductos = 0;
+    for (let item of this.addedProductsList) {
+      totalProductos += item.Total;
+    }
+    return totalProductos;
   }
 
   openOrderModal() {
     this.showModal = true;
   }
 
-  clearFields() {
-    this.id = undefined;
-    this.date = '';
-    this.client = '';
-    this.total = undefined;
-  }
-
-  // Método para alternar el estado del desplegable
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  selectProduct(product: any) {
+    this.selectedProduct = product;
+  }
+
+  toggleAdditionalContent() {
+    this.showAdditionalContent = !this.showAdditionalContent;
+  }
+
+  toggleLista(): void {
+    this.mostrarLista = !this.mostrarLista;
   }
 }

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { Product } from '../interfaces/product';
 import { Client } from '../interfaces/client';
-import { Order } from '../interfaces/orders';
+import { Orders } from '../interfaces/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,7 @@ export class ProductService {
   saveProduct(product: Product): Observable<any>{
     return this.http.post(this.myAppUrl + this.myApiUrl, product);
   }
+
 
   updateProduct(id: number , product: Product): Observable<any>{
     return this.http.put(this.myAppUrl + this.myApiUrl + id, product);
@@ -86,17 +87,52 @@ export class ClientService {
 @Injectable({
   providedIn: 'root'
 })
+export class OrderDetailService {
+  private myAppUrl = 'https://localhost:44309/';
+  private myApiUrl = 'api/Orders';
+
+  constructor(private http: HttpClient) { }
+
+  getListOrder(): Observable<Orders[]> {
+    return this.http.get<Orders[]>(this.myAppUrl + this.myApiUrl);
+  }
+
+  saveOrder(order: Orders): Observable<Orders> {
+    return this.http.post<Orders>(this.myAppUrl + this.myApiUrl, order);
+  }
+
+  updateOrder(id: number, order: Orders): Observable<Orders> {
+    return this.http.put<Orders>(this.myAppUrl + this.myApiUrl + id, order);
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class OrderService {
   private myAppUrl = 'https://localhost:44309/';
   private myApiUrl = 'api/Orders';
 
   constructor(private http: HttpClient) { }
 
-  getListOrder(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.myAppUrl + this.myApiUrl);
+  getListOrder(): Observable<Orders[]> {
+    return this.http.get<Orders[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
-  saveOrder(order: Order): Observable<Order>{
-    return this.http.post<Order>(this.myAppUrl + this.myApiUrl, order);
+  saveOrder(order: Orders): Observable<Orders> {
+    return this.http.post<Orders>(`${this.myAppUrl}${this.myApiUrl}`, order);
+  }
+
+  pdateOrder(id: number, order: Orders): Observable<Orders> {
+    return this.http.put<Orders>(`${this.myAppUrl}${this.myApiUrl}/${id}`, order);
+  }
+
+  saveOrderModal(orderDetails: any): Observable<any> {
+    return this.http.post<any>(`${this.myAppUrl}api/ModalList`, orderDetails);
+  }  
+
+  updateOrder(id: number, order: Orders): Observable<Orders> {
+    return this.http.put<Orders>(`${this.myAppUrl}${this.myApiUrl}/${id}`, order);
   }
 }
+

@@ -3,6 +3,6 @@ export interface Client {
     nombre: string;
     dni: string;
     direccion: string;
-    telefono: string; // Asegúrate de incluir la propiedad telefono en la interfaz Client
+    telefono: string;
   }
   

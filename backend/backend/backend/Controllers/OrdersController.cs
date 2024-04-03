@@ -1,34 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BackendController : ControllerBase
+    public class OrdersController : ControllerBase
     {
-        public readonly AplicationDbContext _context;
+        private readonly AplicationDbContext _context;
 
-        public BackendController(AplicationDbContext context)
+        public OrdersController(AplicationDbContext context)
         {
             _context = context;
         }
 
-
-        // GET: api/<BackendController>
+        // GET: api/<OrdersController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<IEnumerable<Orders>>> Get()
         {
             try
             {
-                var listBackend = await _context.Producto.ToListAsync();
-
-                return Ok(listBackend);
+                return await _context.Orders.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -36,20 +33,21 @@ namespace backend.Controllers
             }
         }
 
-        // GET api/<BackendController>/5
+        // GET api/<OrdersController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+
+        public async Task<ActionResult<Orders>> Get(int id)
         {
             try
             {
-                var back = await _context.Producto.FindAsync(id);
+                var order = await _context.Orders.FindAsync(id);
 
-                if(back == null)
+                if (order == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(back);
+                return order;
             }
             catch (Exception ex)
             {
@@ -57,15 +55,15 @@ namespace backend.Controllers
             }
         }
 
-        // POST api/<BackendController>
+        // POST api/<OrdersController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Producto libro)
+        public async Task<ActionResult<Orders>> Post(Orders orders)
         {
             try
             {
-                _context.Add(libro);
+                _context.Add(orders);
                 await _context.SaveChangesAsync();
-                return Ok (libro);
+                return CreatedAtAction(nameof(Get), new { id = orders.Id }, orders);
             }
             catch (Exception ex)
             {
@@ -73,41 +71,45 @@ namespace backend.Controllers
             }
         }
 
-        // PUT api/<BackendController>/5
+        // PUT api/<OrdersController>/5
         [HttpPut("{id}")]
-        public async Task <IActionResult> Put(int id, [FromBody] Producto libro)
+        public async Task<IActionResult> Put(int id, Orders order)
         {
             try
             {
-                if(id != libro.Id)
+                if (id != order.Id)
                 {
                     return BadRequest();
                 }
-                _context.Update(libro);
+
+                _context.Entry(order).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                return Ok(new {message = "Producto actualizado con exito!"});
+
+                return NoContent();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
-        // DELETE api/<BackendController>/5
+        // DELETE api/<OrdersController>/5
         [HttpDelete("{id}")]
-        public async Task <IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                var libro = await _context.Producto.FindAsync(id);
-                if(libro == null)
+                var order = await _context.Orders.FindAsync(id);
+
+                if (order == null)
                 {
                     return NotFound();
                 }
-                _context.Producto.Remove(libro);
+
+                _context.Orders.Remove(order);
                 await _context.SaveChangesAsync();
-                return Ok(new {message = "Producto eliminado con exito"});
+
+                return NoContent();
             }
             catch (Exception ex)
             {
