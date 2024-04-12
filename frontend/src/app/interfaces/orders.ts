@@ -2,7 +2,7 @@ export interface Orders {
     id: number;
     date: Date;
     client: string;
-    total: number;
-    product?: any;
+    total: number; // Total de la orden
+    product?: any[];
   }
   

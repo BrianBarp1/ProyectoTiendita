@@ -19,7 +19,7 @@
         <td>{{ orden.id }}</td>
         <td>{{ orden.client }}</td>
         <td>{{ orden.date | date:'dd/MM/yyyy' }}</td>
-        <td>{{ calcularTotalProductos() }}</td>
+        <td>{{ orden.total }}</td>
       </tr>
     </tbody>
   </table>
@@ -70,7 +70,7 @@
                   <button class="btn btn-primary" (click)="agregarOrdenModal()">Añadir Producto</button>
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
         <!-- Lista de elementos añadidos -->
@@ -93,7 +93,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" (click)="guardarOrden()">Guardar</button>
+        <button class="btn btn-primary" (click)="guardarOrden(); limpiarCampos()" data-bs-dismiss="modal">Guardar</button>
       </div>
     </div>
   </div>

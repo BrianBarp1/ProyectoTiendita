@@ -88,28 +88,55 @@ export class OrdersComponent implements OnInit {
       console.log('Por favor, complete todos los campos antes de guardar la orden.');
       return;
     }
-
+  
     const newOrder: Orders = {
       id: 0,
       date: new Date(this.date),
       client: this.client,
-      total: 0,
+      total: this.calcularTotalProductos(), // Utiliza el método para calcular el total de productos
+      product: this.addedProductsList // Asocia los productos añadidos con la orden
     };
-
+    
+  
     this.orderService.saveOrder(newOrder).subscribe(
       (response: Orders) => {
         console.log('Orden guardada con éxito:', response);
         this.listOrders.push(response);
         this.clearFields();
-        
+  
         // Filtrar órdenes por cliente seleccionado
         this.selectedClientOrders = this.listOrders.filter(order => order.client === this.client);
+  
+        // Recalcular el total por cada cliente después de agregar la orden
+        this.calcularTotalPorCliente();
       },
       (error: any) => {
         console.error('Error al guardar la orden:', error);
       }
     );
+
+    this.clearFields();
+    
   }
+
+  limpiarCampos() {
+    this.client = ''; // Limpiar el campo del cliente
+    this.date = ''; // Limpiar el campo de la fecha
+    this.selectedProduct = null; // Limpiar el producto seleccionado
+    this.productQuantity = 1; // Restaurar la cantidad a su valor predeterminado
+    this.mostrarLista = false; // Ocultar la lista en el modal
+    this.addedProductsList = []; // Limpiar la lista de productos añadidos
+  }
+
+  
+  calcularTotalPorCliente() {
+    // Recorre todas las órdenes y calcula el total para cada cliente
+    this.clients.forEach(cliente => {
+      const ordenesCliente = this.listOrders.filter(order => order.client === cliente.nombre);
+      cliente.total = ordenesCliente.reduce((total, order) => total + order.total, 0);
+    });
+  }
+  
 
   agregarOrdenModal() {
     console.log(this.selectedProduct, this.productQuantity);
@@ -134,18 +161,16 @@ export class OrdersComponent implements OnInit {
           Total: this.calculateTotal()
         });
   
-        this.clearFields();
       },
       (error: any) => {
         console.error('Error al agregar la orden:', error);
       }
     );
   
-    this.mostrarLista = false; // Ocultar la lista en el modal después de agregar la orden
+    this.mostrarLista = true;
   }
   
-
-  // Método para calcular el total
+  
   calculateTotal(): number {
     console.log(this.selectedProduct);
     return (this.selectedProduct?.precio || 0) * (this.productQuantity || 0);
